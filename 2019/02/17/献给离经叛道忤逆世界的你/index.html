@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://rrjingfang.github.io').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="前段时间，我认识了一个个人博客博主。他年纪比我只大一岁，但比我优秀的多。他思想类文章写的很有深度，技术类的文章也写的顶有趣，经常会分享一些黑科技。 我个人感觉是一个读了很多很多书的年轻人。我一直想成为他那种类型的人，现在，我把他的博客链接贴上来，有兴趣的朋友可以去看看。 博客地址：https://www.lazyman.vip/ 和他聊天的过程中，这位博主给我推荐了一本书，叫做《厚黑学》，并叮嘱我">
+<meta name="keywords" content="独立思考">
+<meta property="og:type" content="article">
+<meta property="og:title" content="献给离经叛道忤逆世界的你">
+<meta property="og:url" content="https://rrjingfang.github.io/2019/02/17/献给离经叛道忤逆世界的你/index.html">
+<meta property="og:site_name" content="人人经方">
+<meta property="og:description" content="前段时间，我认识了一个个人博客博主。他年纪比我只大一岁，但比我优秀的多。他思想类文章写的很有深度，技术类的文章也写的顶有趣，经常会分享一些黑科技。 我个人感觉是一个读了很多很多书的年轻人。我一直想成为他那种类型的人，现在，我把他的博客链接贴上来，有兴趣的朋友可以去看看。 博客地址：https://www.lazyman.vip/ 和他聊天的过程中，这位博主给我推荐了一本书，叫做《厚黑学》，并叮嘱我">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://rrjingfang.github.io/images/进制运算图.jpg">
+<meta property="og:image" content="https://rrjingfang.github.io/images/微信公众号二维码小.jpg">
+<meta property="og:updated_time" content="2019-02-17T02:51:17.528Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="献给离经叛道忤逆世界的你">
+<meta name="twitter:description" content="前段时间，我认识了一个个人博客博主。他年纪比我只大一岁，但比我优秀的多。他思想类文章写的很有深度，技术类的文章也写的顶有趣，经常会分享一些黑科技。 我个人感觉是一个读了很多很多书的年轻人。我一直想成为他那种类型的人，现在，我把他的博客链接贴上来，有兴趣的朋友可以去看看。 博客地址：https://www.lazyman.vip/ 和他聊天的过程中，这位博主给我推荐了一本书，叫做《厚黑学》，并叮嘱我">
+<meta name="twitter:image" content="https://rrjingfang.github.io/images/进制运算图.jpg">
+
+<link rel="canonical" href="https://rrjingfang.github.io/2019/02/17/献给离经叛道忤逆世界的你/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>献给离经叛道忤逆世界的你 | 人人经方</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">人人经方</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Startseite</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archiv</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block " lang="default">
+    <link itemprop="mainEntityOfPage" href="https://rrjingfang.github.io/2019/02/17/献给离经叛道忤逆世界的你/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="夏陈皮">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="人人经方">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          献给离经叛道忤逆世界的你
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              <time title="Erstellt: 2019-02-17 10:19:40 / Geändert am: 10:51:17" itemprop="dateCreated datePublished" datetime="2019-02-17T10:19:40+08:00">2019-02-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>前段时间，我认识了一个个人博客博主。他年纪比我只大一岁，但比我优秀的多。他思想类文章写的很有深度，技术类的文章也写的顶有趣，经常会分享一些黑科技。</p>
+<p>我个人感觉是一个读了很多很多书的年轻人。我一直想成为他那种类型的人，现在，我把他的博客链接贴上来，有兴趣的朋友可以去看看。</p>
+<p>博客地址：<a href="https://www.lazyman.vip/" target="_blank" rel="noopener">https://www.lazyman.vip/</a></p>
+<p>和他聊天的过程中，这位博主给我推荐了一本书，叫做《厚黑学》，并叮嘱我有时间去读一下。以前，我也听说过这本书，不过在当时，像我这种满嘴仁义道德的伪君子，自然是不会去读这种书的。因为别人一听名字，我这个伪君子不就露馅了么？哈哈</p>
+<p>读了一大部分之后，凭心而论，这是一本好书，不过就看你会不会读书了。譬如，人以手指月，看你是选择看月亮还是看手，有的人看到了月亮忘却了手，欣喜不已，有的人只盯着手，忽视了月亮，那么只能破口大骂了。</p>
+<p>我看到的不知道是手还是月亮，姑且写下，让时间来评判：</p>
+<p><strong>尽信书不如无书、尽信师不如无师。真理上的面纱有很多层，有老师蒙上的，有亲戚蒙上的，有朋友蒙上的，还有权威圣人蒙上的，看过一遍之后，要有看破撕破的能力。</strong></p>
+<p><strong>不执着于任何一层面纱本身，用自己的头脑探寻事物的真相，只有自己探索过的东西才是自己的东西。</strong></p>
+<p>现在，我问一个问题哈！圣人的道理一定正确？表面上是这样的，因为我们读书是读的圣贤书，处事要以圣贤为标准。可是实际上却并不是那么回事儿，中国几千年的历史只出了那么几个圣人，只有尧舜禹汤文武周公孔子，加起来就只有八个，七个君主，一个平民。</p>
+<p>我们不是地大物博么？我们不是有四万万亿人民么？况且我们读的是圣人书，按理来说，圣人这个物种应该在我们华夏大地实现量产才是。为什么自秦汉以后没有圣人？我们古代的知识分子，苦苦地学圣人的道理，结果却出不了圣人，那么你说问题出在哪里？</p>
+<p>我觉得压根就没有圣人，圣人一说是诸子百家为推广自己的理论，立了个牌坊，找了个靠山。前面的尧舜禹汤文武周公都是君王，孔子把他们作为儒家的圣人。他为了推广自己的儒家理论，便说我的理论是圣人传下来的，不是我独创的。直到后世者真的信了，罢黜百家，独尊儒术，又给孔子立了牌坊，孔子也挤到了圣人的行列。</p>
+<p>古代的诸子百家也很懂啊，大抵人心就是这样畏惧权势权威。一个没有权势和影响力的人，说话基本上就跟放屁差不多吧！所以这些先秦诸子，就把自己放的屁说成是世间权势大者放的屁。人类或者所有物种的天性就是这样，在强者面前，这算是臭屁，也会被说成真香！</p>
+<p>说到这里，并不是说先秦诸子讲的理论是真的臭。其本意是好的，为了推行平天下的理论嘛。只不过这样的流弊也很明显，圣人说的就是对的，权威说的不可忤逆，老师说的大过于天。</p>
+<p>前一段时间，公司在做创客教育的培训。我们招了一批小学生初中生过来体验创客教育，我被安排了一些课程，教小孩子简单的编程知识。有一天，我上课要用到一点点数学知识，我就这样跟这群小朋友们聊起了数学。</p>
+<p>我问：“小朋友们，你们知道长方形的面积怎么算么？”</p>
+<p>奶生奶气的回答：“知道！长乘以宽”</p>
+<p>问：“那好，假如一个长方形的长为5mm，宽为3mm，那么长方形的面积为多少？”</p>
+<p>答：“15！”</p>
+<p>有个小朋友又大声回答：“15mm的平方！”</p>
+<p>我再问：“好，15mm的平方，那小朋友们，你们知道面积的单位为什么要叫做mm^2么？为什么不叫做mm，不叫做A，也不叫做B”</p>
+<p>答：“因为mm是长度的单位”</p>
+<p>我摇头</p>
+<p>答：“<strong>因为老师教的，考试不这样写，就要扣分！</strong>”</p>
+<p><strong>我愕然，从来就没有人跟他们讲明白过一些东西，只是把符号强塞到他们的脑子里。你若是认同，我便给你加分，若是不认同，我便给你扣分，在没有解释的前提下，这就是极致的专制主义。</strong></p>
+<p>那没办法，只能我跟他们解释了，可能我的解释也不一定完全正确，但是绝对启发思维，具有参考意义。见下图：</p>
+<p><img src="/images/进制运算图.jpg" alt=""></p>
+<p>他们从来也没有想过进制也会参与运算，原来面积的单位是这么来的！</p>
+<p>其实一些小学生不明白也就算了，毕竟他们很多概念还没有树立起来，这也很正常。可是一些初中生，却从来也没有怀疑过概念的正确性，只是一味的接受，然后应付考试。我不知道他们对于知识的好奇心，对于世界的质疑心到底去哪儿了。</p>
+<p>从诸子百家后，百花就再也不敢齐放了，一直是儒儒儒儒！到中国近代就一直是这样。其实并不是说儒术不好，而是思想应该更多元化，多元化的前提建立在每一个人的独立思考上面，可是每个人的脑子里不是儒就是马，很少真正有自己的思考。</p>
+<p>对于思想，我们可以欢迎百家争鸣，千家争鸣，百花齐放，万花齐放，就是不能一枝独秀，可是事实总是相反，秦始皇焚书坑儒，汉武帝罢黜百家，独尊儒术，老子指向东，儿子就不敢往西。</p>
+<p>专制的王朝奴役百姓，专制的老子祸害儿子。</p>
+<p>我们要破局，不能别人说什么就是什么？老师说的话，亲朋好友说的话，权威说的话，乃至圣人说的话都不一定正确，一定要在大脑面前设置一道过滤的屏障，多打一个疑问号！</p>
+<p>比如，儒家说的修身，齐家，治国，平天下的逻辑一定行的通么？从小的个人修养层面升级到家庭国家的层面，这个逻辑就真的不一定通！</p>
+<p>可能儒家的伦理道德，在修身的层面是适用的，但是在齐家治国的层面就会显得格格不入。因为在集体元素而不是个体元素之间，很多时候讲仁义是没有用的，是要讲手段，讲法则的。但凡，在战争，在家国层面，光以仁义道德行事而导致失败的例子，数不胜数。</p>
+<p>其实，这事很容易类比思考，拿物理学的几个规律来说，我们就不能拿宏观世界的牛顿力学，去研究微观世界粒子的运动规律。也不能拿微观世界的量子力学，去研究天体间的运动规律。就算在同一个宏观世界，也会有低速版的牛顿和高速版的爱因斯坦，任何的错位，都会导致漏洞百出的错误以及不适用的繁琐计算。</p>
+<p>可是中国的文化倒是顶怪的，自诸子百家之后就很难再产生什么新的思想，好像我们的文化在二千年前就到达了顶峰，罢黜百家，独尊儒术之后，就一直以儒家为宗，就算产生的朱熹的理学、阳明的心学都不得不依附于儒宗而生存。</p>
+<p>最后，我还想再叨叨一句，愿你我的大脑都能开出思想之花！</p>
+<p>注：交个朋友！</p>
+<div align="center"><br><img src="/images/微信公众号二维码小.jpg" alt=""><br></div>
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/独立思考/" rel="tag"># 独立思考</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/02/12/感冒发烧的机理是什么？该降温吗？/" rel="prev" title="感冒发烧的机理是什么？该降温吗？">
+      <i class="fa fa-chevron-left"></i> 感冒发烧的机理是什么？该降温吗？
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/02/21/Linux最常用的十个命令/" rel="next" title="Linux最常用的十个命令">
+      Linux最常用的十个命令 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Inhaltsverzeichnis
+        </li>
+        <li class="sidebar-nav-overview">
+          Übersicht
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">夏陈皮</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">Artikel</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">Kategorien</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">schlagwörter</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">夏陈皮</span>
+</div>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Design – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

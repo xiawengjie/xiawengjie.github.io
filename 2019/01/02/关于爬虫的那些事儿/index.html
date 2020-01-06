@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://rrjingfang.github.io').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="什么是爬虫？爬虫这个名字听起来像是某种虫子，但其实不是，我第一次听见爬虫这个词是在知乎上面，有个问题是“爬虫可以用来做什么有趣的事情？”，然后下面回答一大堆，有去爬内涵段子的，有去爬取百度贴吧美女图片的，反正各种乱七八糟的都看到过，自此以后，对爬虫产生了一种神秘的认知，直到我开始下定决心来学习爬虫，才发现爬虫其实就是个网络程序，别名又叫做网络蜘蛛，网络机器人，是一个可以从网络上自动下载信息的脚本程">
+<meta name="keywords" content="python,爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于爬虫的那些事儿">
+<meta property="og:url" content="https://rrjingfang.github.io/2019/01/02/关于爬虫的那些事儿/index.html">
+<meta property="og:site_name" content="人人经方">
+<meta property="og:description" content="什么是爬虫？爬虫这个名字听起来像是某种虫子，但其实不是，我第一次听见爬虫这个词是在知乎上面，有个问题是“爬虫可以用来做什么有趣的事情？”，然后下面回答一大堆，有去爬内涵段子的，有去爬取百度贴吧美女图片的，反正各种乱七八糟的都看到过，自此以后，对爬虫产生了一种神秘的认知，直到我开始下定决心来学习爬虫，才发现爬虫其实就是个网络程序，别名又叫做网络蜘蛛，网络机器人，是一个可以从网络上自动下载信息的脚本程">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-27T07:06:40.408Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于爬虫的那些事儿">
+<meta name="twitter:description" content="什么是爬虫？爬虫这个名字听起来像是某种虫子，但其实不是，我第一次听见爬虫这个词是在知乎上面，有个问题是“爬虫可以用来做什么有趣的事情？”，然后下面回答一大堆，有去爬内涵段子的，有去爬取百度贴吧美女图片的，反正各种乱七八糟的都看到过，自此以后，对爬虫产生了一种神秘的认知，直到我开始下定决心来学习爬虫，才发现爬虫其实就是个网络程序，别名又叫做网络蜘蛛，网络机器人，是一个可以从网络上自动下载信息的脚本程">
+
+<link rel="canonical" href="https://rrjingfang.github.io/2019/01/02/关于爬虫的那些事儿/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>关于爬虫的那些事儿 | 人人经方</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">人人经方</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Startseite</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archiv</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block " lang="default">
+    <link itemprop="mainEntityOfPage" href="https://rrjingfang.github.io/2019/01/02/关于爬虫的那些事儿/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="夏陈皮">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="人人经方">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于爬虫的那些事儿
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
+
+              <time title="Erstellt: 2019-01-02 14:23:29" itemprop="dateCreated datePublished" datetime="2019-01-02T14:23:29+08:00">2019-01-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Bearbeitet am</span>
+                <time title="Geändert am: 2019-02-27 15:06:40" itemprop="dateModified" datetime="2019-02-27T15:06:40+08:00">2019-02-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程知识/" itemprop="url" rel="index">
+                    <span itemprop="name">编程知识</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="什么是爬虫？"><a href="#什么是爬虫？" class="headerlink" title="什么是爬虫？"></a>什么是爬虫？</h1><p>爬虫这个名字听起来像是某种虫子，但其实不是，我第一次听见爬虫这个词是在知乎上面，有个问题是“爬虫可以用来做什么有趣的事情？”，然后下面回答一大堆，有去爬内涵段子的，有去爬取百度贴吧美女图片的，反正各种乱七八糟的都看到过，自此以后，对爬虫产生了一种神秘的认知，直到我开始下定决心来学习爬虫，才发现爬虫其实就是个网络程序，别名又叫做网络蜘蛛，网络机器人，是一个可以从网络上自动下载信息的脚本程序。</p>
+<h1 id="爬虫分为哪几种？"><a href="#爬虫分为哪几种？" class="headerlink" title="爬虫分为哪几种？"></a>爬虫分为哪几种？</h1><p>爬虫主要还是有二种，一种是通用爬虫，一种是聚焦爬虫。</p>
+<p>通用爬虫就是可以说就是搜索引擎，像百度、chrome、搜狗等，我们平常使用搜索信息，实际上就是通用爬虫抓取到相应的信息，然后呈现在你面前，这类爬虫的技术壁垒很高，一般我们普通人也研究不了。</p>
+<p>聚焦爬虫只采集某一个站点的特定信息，采集的范围小，灵活性强。比如，平常我们浏览百度贴吧，看到一些搞笑的段子，想把它们收集起来，如果我们一行一行的去复制粘贴，肯定费时费力，等到收集完，估计也就没什么心情继续看了，但是聚焦爬虫却可以帮助我们完成这个重复的动作，而我们只需要写一次程序就好了。</p>
+<h1 id="聚焦爬虫主要由几部分组成？"><a href="#聚焦爬虫主要由几部分组成？" class="headerlink" title="聚焦爬虫主要由几部分组成？"></a>聚焦爬虫主要由几部分组成？</h1><p>一、数据请求部分</p>
+<p>数据请求是所有爬虫系统的第一步，我们构造URL，设置代理，我们设置请求头，我们隔一段时间再去访问，我们想尽办法去绕过反爬虫机制，只为了能够得到最原始的网页数据。</p>
+<p>二、数据提取部分</p>
+<p>当我们把数据从网络上提取下来的时候，我们就已经完成了这件事情的百分之七十，剩下的百分之三十就是提取数据了。我提取数据一般采用正则表达式来提取，因为使用正则表达式十分的快速有效，当然也还有其他的一些提取方式，比如xpath等，这些都比正则简单，把正则学会了，这些都很容易上手。</p>
+<p>三、数据保存部分</p>
+<p>数据保存是最后一步，一般有二种途径，要么保存到Excel、Word等文本文件里，要么就保存到数据库里，以便于后续的数据查询。</p>
+<h1 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h1><p>关于爬虫我就写这么多吧！太高深的技术文，我也写不出来，毕竟这是我的第一篇技术文。加油！</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/python/" rel="tag"># python</a>
+              <a href="/tags/爬虫/" rel="tag"># 爬虫</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/01/02/每个成年人都需要独立的空间/" rel="prev" title="每个成年人都需要独立的空间">
+      <i class="fa fa-chevron-left"></i> 每个成年人都需要独立的空间
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/02/12/感冒发烧的机理是什么？该降温吗？/" rel="next" title="感冒发烧的机理是什么？该降温吗？">
+      感冒发烧的机理是什么？该降温吗？ <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Inhaltsverzeichnis
+        </li>
+        <li class="sidebar-nav-overview">
+          Übersicht
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是爬虫？"><span class="nav-number">1.</span> <span class="nav-text">什么是爬虫？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#爬虫分为哪几种？"><span class="nav-number">2.</span> <span class="nav-text">爬虫分为哪几种？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#聚焦爬虫主要由几部分组成？"><span class="nav-number">3.</span> <span class="nav-text">聚焦爬虫主要由几部分组成？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写在最后"><span class="nav-number">4.</span> <span class="nav-text">写在最后</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">夏陈皮</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">Artikel</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">Kategorien</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">schlagwörter</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">夏陈皮</span>
+</div>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Design – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://rrjingfang.github.io').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="面向对象：Object Oriented Programming，简称OOP，既面向对象程序设计。 面向对象程序设计和面向过程程序设计不同：面向过程的程序设计，根据业务的逻辑需要从上往下写代码，往往业务逻辑一复杂，代码量上来就难以维护，然而，面向对象编程将对象的数据和函数绑定到一起，进行封装，外部不影响内部，内部不影响外部，这样就能够快速的开发程序，减少了重复的撰写代码。 类和对象类是一个抽象的名">
+<meta name="keywords" content="python,面向对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python的面向对象编程！">
+<meta property="og:url" content="https://rrjingfang.github.io/2019/02/28/Python的面向对象编程！/index.html">
+<meta property="og:site_name" content="人人经方">
+<meta property="og:description" content="面向对象：Object Oriented Programming，简称OOP，既面向对象程序设计。 面向对象程序设计和面向过程程序设计不同：面向过程的程序设计，根据业务的逻辑需要从上往下写代码，往往业务逻辑一复杂，代码量上来就难以维护，然而，面向对象编程将对象的数据和函数绑定到一起，进行封装，外部不影响内部，内部不影响外部，这样就能够快速的开发程序，减少了重复的撰写代码。 类和对象类是一个抽象的名">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-02T07:07:16.862Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python的面向对象编程！">
+<meta name="twitter:description" content="面向对象：Object Oriented Programming，简称OOP，既面向对象程序设计。 面向对象程序设计和面向过程程序设计不同：面向过程的程序设计，根据业务的逻辑需要从上往下写代码，往往业务逻辑一复杂，代码量上来就难以维护，然而，面向对象编程将对象的数据和函数绑定到一起，进行封装，外部不影响内部，内部不影响外部，这样就能够快速的开发程序，减少了重复的撰写代码。 类和对象类是一个抽象的名">
+
+<link rel="canonical" href="https://rrjingfang.github.io/2019/02/28/Python的面向对象编程！/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Python的面向对象编程！ | 人人经方</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">人人经方</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Startseite</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archiv</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block " lang="default">
+    <link itemprop="mainEntityOfPage" href="https://rrjingfang.github.io/2019/02/28/Python的面向对象编程！/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="夏陈皮">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="人人经方">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python的面向对象编程！
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
+
+              <time title="Erstellt: 2019-02-28 14:41:25" itemprop="dateCreated datePublished" datetime="2019-02-28T14:41:25+08:00">2019-02-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Bearbeitet am</span>
+                <time title="Geändert am: 2019-03-02 15:07:16" itemprop="dateModified" datetime="2019-03-02T15:07:16+08:00">2019-03-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程知识/" itemprop="url" rel="index">
+                    <span itemprop="name">编程知识</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>面向对象：Object Oriented Programming，简称OOP，既面向对象程序设计。</p>
+<p>面向对象程序设计和面向过程程序设计不同：面向过程的程序设计，根据业务的逻辑需要从上往下写代码，往往业务逻辑一复杂，代码量上来就难以维护，然而，面向对象编程将对象的数据和函数绑定到一起，进行封装，外部不影响内部，内部不影响外部，这样就能够快速的开发程序，减少了重复的撰写代码。</p>
+<h3 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h3><p>类是一个抽象的名称，但凡具有某种相同或者类似属性和方法的物种集合都可以称作为类</p>
+<p>对象，喂喂喂，想哪去了，这不是给你介绍女朋友诶！对象是类的某一个具体的实例，比如，类有猫类，猫类里面有一只叫做阿花的猫，这只阿花的猫就叫做猫类的对象。</p>
+<p>定义类创建实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名<span class="params">(首写字母大写)</span>:</span></span><br><span class="line">     属性列表</span><br><span class="line">	 方法列表</span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>()：</span></span><br><span class="line">     <span class="comment"># 方法</span></span><br><span class="line">	 <span class="function"><span class="keyword">def</span> <span class="title">Abc</span><span class="params">()</span></span><span class="symbol">:</span></span><br><span class="line">	     pass</span><br><span class="line">	 <span class="function"><span class="keyword">def</span> <span class="title">adc</span><span class="params">()</span></span><span class="symbol">:</span></span><br><span class="line">	     pass	 </span><br><span class="line"><span class="comment"># 创建对象</span></span><br><span class="line">car1 = Car()</span><br></pre></td></tr></table></figure>
+<h3 id="魔法方法"><a href="#魔法方法" class="headerlink" title="魔法方法"></a>魔法方法</h3><p>在python中，如果是有<strong>xxxx</strong>()的，那么就有特殊的功能，因此就叫做魔法方法，接下来把常见的魔法方法简单介绍一下。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>()：</span></span><br><span class="line">     <span class="comment"># 方法</span></span><br><span class="line">	 <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>,name)</span></span><span class="symbol">:</span></span><br><span class="line">	     <span class="keyword">self</span>.name = name</span><br><span class="line">	 <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">	     m = <span class="string">"Hhhhh"</span></span><br><span class="line">		 <span class="keyword">return</span> m</span><br><span class="line">	 <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">	    print(<span class="string">"这是 new 方法"</span>)</span><br><span class="line">        <span class="keyword">return</span> object.__new_<span class="number">_</span>(cls)</span><br><span class="line"><span class="comment"># 创建对象</span></span><br><span class="line">car1 = Car(<span class="string">"法拉利"</span>)</span><br><span class="line">print car1</span><br></pre></td></tr></table></figure></p>
+<p><strong><strong>init</strong>方法</strong>:</p>
+<p>当调用类进行实例化的时候，系统会自动调用<strong>init</strong>()方法对实例进行属性的操作。</p>
+<p><strong><strong>str</strong>方法</strong>:</p>
+<p>在类中定义了<strong>str</strong>()方法，当使用print()函数打印对象的时候，会将<strong>str</strong>()方法中返回的字符串打印出来。</p>
+<p><strong><strong>del</strong>方法</strong>:</p>
+<p>在Python中，定义一个对象时会自动调用<strong>init</strong>()方法，同样的，当我们删除一个对象时，系统也会自动调用一个方法<strong>del</strong>(),会执行<strong>del</strong>()中的方法。</p>
+<p><strong><strong>new</strong>方法</strong>:</p>
+<p>在Python中，当我们定义了一个对象，Python内部会自动调用<strong>new</strong>方法，利用object中的<strong>new</strong>方法实例化一个对象出来，并且返回的时候，利用<strong>init</strong>方法对实例进行属性操作，<strong>new</strong>方法属于类方法，<strong>init</strong>方法属于实例方法。</p>
+<h3 id="私有属性与私有方法"><a href="#私有属性与私有方法" class="headerlink" title="私有属性与私有方法"></a>私有属性与私有方法</h3><p>在Python中没有C++中的public和private这些关键字来区分公有属性和私有属性，它是以属性的命名方式来进行区分的，如果在属性前面加二个下划线“__”，则表明该属性是私有属性，否则为公有属性，方法也是一样，如果在方法前面加了二个下划线的话，表示该方法是私有方法，否则则为公有方法</p>
+<p>为什么要设置私有属性，私有方法呢？因为对象里面有些数据需要保护，不能任意的修改，需要将这些数据封装起来，那么就可以定义私有属性，从外部无法直接调用，只能在类的内部多定义一个方法去调用或者修改私有属性，这样就可以达到保护数据的目的。</p>
+<h3 id="继承与多态"><a href="#继承与多态" class="headerlink" title="继承与多态"></a>继承与多态</h3><p>继承本质是为了减少代码的重复量，当子类从父类继承时，父类的一切特性子类都可以直接调用，私有属性与私有方法除外~</p>
+<p>所谓的多态就是指定义时的类型与运行时的类型不一致，在python中崇尚鸭子类型，什么叫做鸭子类型？就是说走路像鸭子，叫起来也像鸭子，那么它就是鸭子。以前我也不太理解这个概念，后来在学python高级教程的时候，我发现好像任何类型都可以通过构造代码变成迭代器和生成器，无所谓它到底是什么类型，是不是迭代器或者生成器都没有关系，只要是可以通过代码做到的迭代器或者生成器的功能，那么那一整块的代码就是迭代器，那么多态也是同理。</p>
+<p>示例实现多态的代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">F1</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">'F1.show'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">S1</span><span class="params">(F1)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">'S1.show'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">S2</span><span class="params">(F1)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">'S2.show'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Func</span><span class="params">(obj)</span>:</span></span><br><span class="line">    obj.show()</span><br><span class="line"></span><br><span class="line">s1_obj = S1()</span><br><span class="line">Func(s1_obj) </span><br><span class="line"></span><br><span class="line">s2_obj = S2()</span><br><span class="line">Func(s2_obj)</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/python/" rel="tag"># python</a>
+              <a href="/tags/面向对象/" rel="tag"># 面向对象</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/02/27/Python如何操作文件/" rel="prev" title="Python如何操作文件">
+      <i class="fa fa-chevron-left"></i> Python如何操作文件
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/03/08/Top250豆瓣音乐爬虫！/" rel="next" title="Top250豆瓣音乐爬虫！">
+      Top250豆瓣音乐爬虫！ <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Inhaltsverzeichnis
+        </li>
+        <li class="sidebar-nav-overview">
+          Übersicht
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#类和对象"><span class="nav-number">1.</span> <span class="nav-text">类和对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#魔法方法"><span class="nav-number">2.</span> <span class="nav-text">魔法方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#私有属性与私有方法"><span class="nav-number">3.</span> <span class="nav-text">私有属性与私有方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承与多态"><span class="nav-number">4.</span> <span class="nav-text">继承与多态</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">夏陈皮</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">Artikel</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">Kategorien</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">schlagwörter</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">夏陈皮</span>
+</div>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Design – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
