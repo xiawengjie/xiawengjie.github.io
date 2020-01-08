@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -21,7 +21,7 @@
   var CONFIG = {
     hostname: new URL('https://xiawengjie/.github.io').hostname,
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.7.0',
     exturl: false,
     sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
@@ -53,8 +53,8 @@
 <meta property="og:url" content="https://xiawengjie/.github.io/2019/02/21/Linux最常用的十个命令/index.html">
 <meta property="og:site_name" content="人人经方">
 <meta property="og:description" content="你知道Linux最常用的十个命令么？cd命令：目录切换这是一个日常使用最为频繁第一个命令，它可以切换当前目录，参数为要切换的目录路径，可以为绝对路径，也可以为相对路径。 123456789切换到绝对路径:cd /hexo/编程知识切换到相对路径:cd ./hexo 切换到当前目录下的hexo文件夹，. 代表当前目录cd ../hexo 切换到上一层目录下的hexo文件夹，.. 代表上一层目录 ls">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-22T02:02:36.543Z">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-01-08T07:03:12.161Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux最常用的十个命令">
 <meta name="twitter:description" content="你知道Linux最常用的十个命令么？cd命令：目录切换这是一个日常使用最为频繁第一个命令，它可以切换当前目录，参数为要切换的目录路径，可以为绝对路径，也可以为相对路径。 123456789切换到绝对路径:cd /hexo/编程知识切换到相对路径:cd ./hexo 切换到当前目录下的hexo文件夹，. 代表当前目录cd ../hexo 切换到上一层目录下的hexo文件夹，.. 代表上一层目录 ls">
@@ -122,7 +122,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -136,12 +136,22 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
   </ul>
@@ -169,7 +179,7 @@
       
   
   
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block " lang="default">
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://xiawengjie/.github.io/2019/02/21/Linux最常用的十个命令/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -191,25 +201,25 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2019-02-21 15:12:13" itemprop="dateCreated datePublished" datetime="2019-02-21T15:12:13+08:00">2019-02-21</time>
+              <time title="创建时间：2019-02-21 15:12:13" itemprop="dateCreated datePublished" datetime="2019-02-21T15:12:13+08:00">2019-02-21</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-02-22 10:02:36" itemprop="dateModified" datetime="2019-02-22T10:02:36+08:00">2019-02-22</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-08 15:03:12" itemprop="dateModified" datetime="2020-01-08T15:03:12+08:00">2020-01-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程知识/" itemprop="url" rel="index">
-                    <span itemprop="name">编程知识</span>
+                  <a href="/categories/哈哈哈/" itemprop="url" rel="index">
+                    <span itemprop="name">哈哈哈</span>
                   </a>
                 </span>
             </span>
@@ -273,13 +283,10 @@
 
         
     <div class="post-nav">
+      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2019/02/17/献给离经叛道忤逆世界的你/" rel="prev" title="献给离经叛道忤逆世界的你">
-      <i class="fa fa-chevron-left"></i> 献给离经叛道忤逆世界的你
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2019/02/22/vim的入门教程！/" rel="next" title="vim的入门教程！">
-      vim的入门教程！ <i class="fa fa-chevron-right"></i>
+    <a href="/2020/01/08/经方故事开篇！！持续连载ing/" rel="next" title="经方故事开篇！！持续连载ing">
+      经方故事开篇！！持续连载ing <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -331,10 +338,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目录
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          站点概览
         </li>
       </ul>
 
@@ -354,20 +361,32 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">categories</span>
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">10</span>
-        <span class="site-state-item-name">tags</span>
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://xiawengjie.github.io/2019/03/08/Top250%E8%B1%86%E7%93%A3%E9%9F%B3%E4%B9%90%E7%88%AC%E8%99%AB%EF%BC%81/" title="个人微信 → https://xiawengjie.github.io/2019/03/08/Top250%E8%B1%86%E7%93%A3%E9%9F%B3%E4%B9%90%E7%88%AC%E8%99%AB%EF%BC%81/" rel="noopener" target="_blank"><i class="fa fa-fw fa-weixin"></i>个人微信</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/yourname" title="GitHub → https://github.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
 
 
 
@@ -394,10 +413,10 @@
   </span>
   <span class="author" itemprop="copyrightHolder">夏陈皮</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.0
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
   </div>
 
         
@@ -418,7 +437,7 @@
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script>
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 <script src="/js/next-boot.js"></script>
 
 
